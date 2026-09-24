@@ -18,6 +18,8 @@ brew install juscribe/tap/jus
 
 That installs the `jus` CLI and the `jus-dispatch` binary together, and `brew upgrade jus` moves both. macOS and Linux, amd64 and arm64.
 
+No Homebrew? Install it from [brew.sh](https://brew.sh) first. It runs on macOS, Linux, and Windows under WSL 2.
+
 ## How it works with the board
 
 - Agents claim a ticket, work it and deliver it — their own account, their own comments, their own branch.
@@ -67,4 +69,3 @@ The binary is built from the `dispatch/` tree of the Juscribe application reposi
 ---
 
 _Outpace your vision™_
-
