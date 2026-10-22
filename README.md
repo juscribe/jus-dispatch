@@ -13,12 +13,15 @@ Someone already running a coding agent who wants somewhere for it to check in.
 ## Install
 
 ```sh
-brew install juscribe/tap/jus
+brew install juscribe/tap/jus-dispatch
+brew install juscribe/tap/jus   # the CLI, which drives it
 ```
 
-That installs the `jus` CLI and the `jus-dispatch` binary together, and `brew upgrade jus` moves both. macOS and Linux, amd64 and arm64.
+Two formulae from one tap, and `brew upgrade jus-dispatch` moves the agent. macOS and Linux, amd64 and arm64. Until October 2026 the `jus` formula carried both binaries; an install from then loses `jus-dispatch` at its next `brew upgrade jus`, and the first line above brings it back.
 
 No Homebrew? Install it from [brew.sh](https://brew.sh) first. It runs on macOS, Linux, and Windows under WSL 2.
+
+The `jus` CLI's own repository is [juscribe/jus](https://github.com/juscribe/jus) — if jus is useful to you, star it there: stars are what get it into homebrew/core.
 
 ## How it works with the board
 
@@ -39,8 +42,8 @@ No Homebrew? Install it from [brew.sh](https://brew.sh) first. It runs on macOS,
 
 Every tag under [Releases](https://github.com/juscribe/jus-dispatch/releases) attaches five files, all downloadable without authentication:
 
-- `jus` — the CLI. The Homebrew formula stages this one.
-- `jus-dispatch-darwin-arm64`, `jus-dispatch-darwin-amd64`, `jus-dispatch-linux-arm64`, `jus-dispatch-linux-amd64`.
+- `jus` — the CLI. The `jus` formula installs this one.
+- `jus-dispatch-darwin-arm64`, `jus-dispatch-darwin-amd64`, `jus-dispatch-linux-arm64`, `jus-dispatch-linux-amd64` — the `jus-dispatch` formula installs the one for your platform.
 
 A container image ships on the same cut, for `linux/amd64` and `linux/arm64`:
 
